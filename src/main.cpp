@@ -1,7 +1,8 @@
 /*
- * Screenshot Unlocker
+ * Screenshot Unlocker - A plugin to always enable screenshot uploads on the Wii U.
  *
  * Copyright (C) 2024  Daniel K. O.
+ *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
