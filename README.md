@@ -13,6 +13,11 @@ This plugin has no settings. Just open any game or app that would normally disab
 screenshots, and try to upload them; it will not prevent you from uploading the
 screenshots.
 
+Most free image upload websites on the internet use either JavaScript or SSL certificates
+that the Wii U web browser doesn't support. If you want to run a web server locally to
+upload your screenshots, you can use [this very simple Python/CherryPy
+server](https://github.com/dkosmari/imgupload-server).
+
 
 ## Build Instructions
 
