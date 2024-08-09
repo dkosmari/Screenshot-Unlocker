@@ -1,0 +1,40 @@
+name: Build Binary
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build-plugin:
+    runs-on: ubuntu-latest
+    name: Build plugin
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Docker image
+      run: docker build --tag aroma-plugin-screenshot-unlocker-image .
+
+    - name: Build plugin
+      uses: addnab/docker-run-action@v3
+      with:
+        image: aroma-plugin-screenshot-unlocker-image
+        options: --name aroma-plugin-screenshot-unlocker-container
+        run: |
+          ./bootstrap
+          ./configure --host=powerpc-eabi CXXFLAGS="-O2 -ffunction-sections -fipa-pta"
+          make
+
+    - name: Copy from container to host
+      uses: tj-actions/docker-cp@v2
+      with:
+        container: aroma-plugin-screenshot-unlocker-container
+        source: /project/screenshot-unlocker.wps
+        destination: screenshot-unlocker.wps
+
+    - name: Upload
+      uses: actions/upload-artifact@v4
+      with:
+        name: screenshot-unlocker.wps
+        path: "*.wps"
+        if-no-files-found: error
