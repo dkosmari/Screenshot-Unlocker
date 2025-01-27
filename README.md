@@ -1,7 +1,9 @@
+![Screenshot Unlocker](assets/banner.png)
+
 # Screenshot Unlocker
 
-Some Wii U games and apps disable the upload of screenshots through the Home Menu's web
-browser. This plugin overrides the setting, to always enable screenshots.
+Some Wii U games and apps disable the upload of screenshots to Miiverse and Web
+Browser. This plugin removes this restriction, to always enable screenshot uploads.
 
 Note: this plugin has no relationship to the [official Screenshot
 plugin](https://github.com/wiiu-env/ScreenshotWUPS) from Aroma.
@@ -10,13 +12,17 @@ plugin](https://github.com/wiiu-env/ScreenshotWUPS) from Aroma.
 ## Usage
 
 This plugin has no settings. Just open any game or app that would normally disable
-screenshots, and try to upload them; it will not prevent you from uploading the
-screenshots.
+screenshots, and try to upload them (to a web page, or to Miiverse); you'll see the
+screenshot of both gamepad and TV are available for posting.
+
+
+### Uploading to web pages
 
 Most free image upload websites on the internet use either JavaScript or SSL certificates
-that the Wii U web browser doesn't support. If you want to run a web server locally to
-upload your screenshots, you can use [this very simple Python/CherryPy
-server](https://github.com/dkosmari/imgupload-server).
+that the Wii U's web browser doesn't support. To test image uploads, I created a test web
+server in Python/CherryPy that I run on my local network:
+https://github.com/dkosmari/imgupload-server . With this, you can upload screenshots
+directly to your PC.
 
 
 ## Build Instructions
@@ -37,3 +43,8 @@ This is a standard Automake package. See `./configure --help` for more options.
 ## Build Instructions (Docker version)
 
 If you have Docker available, just run the script `docker-build.sh`.
+
+
+## Special Thanks
+
+- @ingunar for the new banner and icon.

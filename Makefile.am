@@ -26,7 +26,7 @@ all-local: $(WPS_FILE)
 
 
 install-exec-local: $(WPS_FILE)
-	curl "ftp://wiiu:/fs/vol/external01/wiiu/environments/aroma/plugins/" --upload-file $<
+	curl  --upload-file $< "ftp://wiiu:/fs/vol/external01/wiiu/environments/aroma/plugins/"
 
 
 uninstall-local:
