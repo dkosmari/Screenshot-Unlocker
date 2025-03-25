@@ -2,18 +2,24 @@
 
 # Screenshot Unlocker
 
-Some Wii U games and apps disable the upload of screenshots to Miiverse and Web
-Browser. This plugin removes this restriction, to always enable screenshot uploads.
+Some Wii U games and apps block the upload of screenshots to Miiverse and Web
+Browser. This plugin removes this restriction, it always allows screenshot uploads.
 
 Note: this plugin has no relationship to the [official Screenshot
 plugin](https://github.com/wiiu-env/ScreenshotWUPS) from Aroma.
 
+<p align="center">
+    <a href="https://hb-app.store/wiiu/ScreenshotUnlocker">
+        <img src="assets/hbasbadge-wiiu.png" width="335" height="96">
+    </a>
+</p>
+
 
 ## Usage
 
-This plugin has no settings. Just open any game or app that would normally disable
-screenshots, and try to upload them (to a web page, or to Miiverse); you'll see the
-screenshot of both gamepad and TV are available for posting.
+Just open any game or app that would normally prevent you from posting screenshots (like
+Monster Hunter 3 Ultimate), and try to upload them (to a web page, or to Miiverse); you'll
+see the screenshot of both gamepad and TV are available for posting.
 
 
 ### Uploading to web pages
@@ -27,20 +33,23 @@ directly to your PC.
 
 ## Build Instructions
 
+
+### Local Build
+
 If you got the source from a release tarball, you can skip step 0.
 
 Build steps:
 
   0. `./bootstrap`
 
-  1. `./configure --host=powerpc-eabi`
+  1. `./configure --host=powerpc-eabi CXXFLAGS="-Os"`
 
   2. `make`
 
 This is a standard Automake package. See `./configure --help` for more options.
 
 
-## Build Instructions (Docker version)
+### Docker Build
 
 If you have Docker available, just run the script `docker-build.sh`.
 
