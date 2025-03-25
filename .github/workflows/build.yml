@@ -1,4 +1,4 @@
-name: Build Binary
+name: Build
 
 on: [push, pull_request, workflow_dispatch]
 
@@ -22,7 +22,7 @@ jobs:
         options: --name aroma-plugin-screenshot-unlocker-container
         run: |
           ./bootstrap
-          ./configure --host=powerpc-eabi CXXFLAGS="-O2 -ffunction-sections -fipa-pta"
+          ./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fipa-pta"
           make
 
     - name: Copy from container to host
