@@ -4,16 +4,7 @@ EXTRA_DIST = \
 	README.md
 
 
-AM_CPPFLAGS = $(DEVKITPRO_CPPFLAGS)
-
-AM_CXXFLAGS = \
-	$(DEVKITPRO_CXXFLAGS) \
-	-Wall -Wextra
-
-AM_LDFLAGS = $(DEVKITPRO_LDFLAGS)
-
-LIBS = $(DEVKITPRO_LIBS)
-
+AM_CXXFLAGS = -Wall -Wextra -Werror
 
 WPS_FILE = screenshot-unlocker.wps
 
