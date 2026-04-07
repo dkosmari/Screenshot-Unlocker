@@ -1,0 +1,3 @@
+[submodule "external/WiiUPluginSystem"]
+	path = external/WiiUPluginSystem
+	url = https://github.com/wiiu-env/WiiUPluginSystem.git

@@ -1,7 +1,7 @@
 /*
- * Screenshot Unlocker - A plugin to always enable screenshot uploads on the Wii U.
+ * Screenshot Unlocker - A plugin to unblock screenshot uploads on the Wii U.
  *
- * Copyright (C) 2024  Daniel K. O.
+ * Copyright (C) 2024, 2026  Daniel K. O.
  *
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
@@ -15,7 +15,7 @@
 
 
 WUPS_PLUGIN_NAME(PACKAGE_NAME);
-WUPS_PLUGIN_DESCRIPTION("Always enable uploading screenshots from the web browser.");
+WUPS_PLUGIN_DESCRIPTION("Unblock uploading screenshots from miiverse and web browser.");
 WUPS_PLUGIN_VERSION(PACKAGE_VERSION);
 WUPS_PLUGIN_AUTHOR("Daniel K. O.");
 WUPS_PLUGIN_LICENSE("GPLv3");
