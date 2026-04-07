@@ -42,7 +42,7 @@ Build steps:
 
   0. `./bootstrap`
 
-  1. `./configure --host=powerpc-eabi CXXFLAGS="-Os"`
+  1. `./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fdata-sections"`
 
   2. `make`
 
@@ -56,4 +56,4 @@ If you have Docker available, just run the script `docker-build.sh`.
 
 ## Special Thanks
 
-- @ingunar for the new banner and icon.
+- @ingunar for the banner and icon.
