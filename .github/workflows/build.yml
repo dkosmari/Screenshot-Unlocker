@@ -8,32 +8,33 @@ jobs:
     name: Build plugin
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
-        fetch-depth: 0
+        fetch-depth: 1
+        submodules: recursive
 
-    - name: Setup Docker image
-      run: docker build --tag aroma-plugin-screenshot-unlocker-image .
+    - name: Setup Docker
+      run: docker build --tag plugin-image .
 
     - name: Build plugin
       uses: addnab/docker-run-action@v3
       with:
-        image: aroma-plugin-screenshot-unlocker-image
-        options: --name aroma-plugin-screenshot-unlocker-container
+        image: plugin-image
+        options: --name plugin-container
         run: |
           ./bootstrap
-          ./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fipa-pta"
+          ./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fdata-sections
           make
 
     - name: Copy from container to host
       uses: tj-actions/docker-cp@v2
       with:
-        container: aroma-plugin-screenshot-unlocker-container
+        container: plugin-container
         source: /project/screenshot-unlocker.wps
         destination: screenshot-unlocker.wps
 
     - name: Upload
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: screenshot-unlocker.wps
         path: "*.wps"
