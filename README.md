@@ -38,11 +38,18 @@ directly to your PC.
 
 If you got the source from a release tarball, you can skip step 0.
 
+When cloning the repository with git, make sure you're obtaining the submodules:
+
+```
+git clone --recurse-submodules https://github.com/dkosmari/Screenshot-Unlocker.git
+```
+
+
 Build steps:
 
   0. `./bootstrap`
 
-  1. `./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fdata-sections"`
+  1. `./configure --host=powerpc-eabi CXXFLAGS="-Os -ffunction-sections -fdata-sections -fipa-pta"`
 
   2. `make`
 

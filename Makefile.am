@@ -1,6 +1,7 @@
 EXTRA_DIST = \
 	bootstrap \
 	COPYING \
+	external 
 	README.md
 
 
