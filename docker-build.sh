@@ -1,8 +1,8 @@
 #!/bin/bash
 
 PLUGIN=screenshot-unlocker
-IMAGE=aroma-plugin-$PLUGIN-image
-CONTAINER=aroma-plugin-$PLUGIN-container
+IMAGE=${PLUGIN}-image
+CONTAINER=${PLUGIN}-container
 
 cleanup()
 {
@@ -27,6 +27,6 @@ docker run $ARGS sh -c "./bootstrap && ./configure --host=powerpc-eabi CXXFLAGS=
 echo "Compilation finished."
 
 # Copy the wps file out.
-docker cp "$CONTAINER:/project/$PLUGIN.wps" .
+docker cp "$CONTAINER:/project/${PLUGIN}.wps" .
 
 cleanup 0
